@@ -15,17 +15,17 @@ new Vue({
 	},
 	computed: {
 		title: function() {
-			return this.pomodoroState.toUpperCase() + '!';
+			return this.pomodoroState;
 		}
 	},
 	methods: {
 		start: function () {
 			this._tick();
-			this.interval = setInterval(this._tick, 1000);
+			this.interval = setInterval(this._tick, 10000);
 		},
 		_tick: function() {
-			if (this.second !== 0) {
-				this.second--;
+			if (this.second > 0) {
+				this.second = this.second - 10;
 				return;
 			}
 			if (this.minute !== 0) {
@@ -44,4 +44,4 @@ new Vue({
 			}
 		}
 	}
-});
+}).start();

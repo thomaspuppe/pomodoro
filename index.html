@@ -8,17 +8,14 @@
 </head>
 <body>
 
-	<header>
-		<h1>Pomodoro Timer</p>
-	</header>
+	<main id="app" :class="pomodoroState">
 
-	<main id="app">
-
-		<h2>{{ title }}</h2>
-		{{ minute }}:{{ second }}
-
-
-		<div><button @click="start()">Start</button></div>
+		<div>
+			<h1>{{ title }}</h1>
+		</div>
+		<div>
+			{{ minute }}
+		</div>
 
 	</main>
 
