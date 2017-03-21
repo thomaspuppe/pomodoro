@@ -13,6 +13,11 @@ new Vue({
 		pomodoroState: POMODORO_STATES.WORK,
 		timestamp: 0
 	},
+	computed: {
+		title: function() {
+			return this.pomodoroState.toUpperCase() + '!';
+		}
+	},
 	methods: {
 		start: function () {
 			this._tick();
