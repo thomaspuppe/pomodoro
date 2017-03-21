@@ -28,7 +28,15 @@ new Vue({
 				this.second = 59;
 				return;
 			}
+
+			// if second and minute is null, toggle state
+			this.pomodoroState = this.pomodoroState === POMODORO_STATES.WORK ? POMODORO_STATES.REST : POMODORO_STATES.WORK;
+
+			if (this.pomodoroState === POMODORO_STATES.WORK) {
+				this.minute = WORKING_TIME_LENGTH_IN_MINUTES;
+			} else {
+				this.minute = RESTING_TIME_LENGTH_IN_MINUTES;
+			}
 		}
 	}
-
 });
